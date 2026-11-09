@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rojo: #c8102e;
+  --color-rojo-oscuro: #8f0b20;
+  --color-azul: #1d4ed8;
+  --color-fondo: #ffffff;
+  --color-tinta: #1b1b1f;
+  --color-borde: #d9d9de;
+  --font-sans: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-fondo text-tinta;
+  }
+}
+
+@layer components {
+  .tarjeta {
+    @apply rounded-lg border border-borde bg-white p-4 shadow-sm;
+  }
+
+  .etiqueta {
+    @apply inline-block rounded-full px-3 py-0.5 text-xs font-semibold;
+  }
+
+  .btn-primario {
+    @apply inline-block cursor-pointer rounded-md bg-rojo px-4 py-2 font-bold text-white transition hover:bg-rojo-oscuro focus:outline-none focus:ring-2 focus:ring-azul disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500;
+  }
+
+  .btn-secundario {
+    @apply inline-block cursor-pointer rounded-md border border-rojo px-4 py-2 font-bold text-rojo transition hover:bg-rojo hover:text-white focus:outline-none focus:ring-2 focus:ring-azul disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400 disabled:hover:bg-transparent;
+  }
+
+  .campo {
+    @apply w-full rounded-md border border-borde bg-white px-3 py-2 focus:border-rojo focus:outline-none focus:ring-2 focus:ring-azul;
+  }
+
+  .etiqueta-campo {
+    @apply mb-1 mt-3 block text-sm font-bold;
+  }
+
+  .mensaje-error {
+    @apply mt-1 text-sm font-bold text-rojo;
+  }
+
+  .titulo-pagina {
+    @apply mb-4 text-3xl font-bold text-rojo-oscuro;
+  }
+}
